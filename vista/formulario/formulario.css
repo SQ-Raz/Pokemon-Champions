@@ -5,7 +5,7 @@
 :root {
 	--main-bg-color: #fe0065;
 	--secondary-bg-color: #f2f2f2;
-	--main-screen-bg-color: #98cb98;
+	--main-screen-bg-color: #000000;
 	--secondary-screen-bg-color: #9e9d9d;
 	--main-buttons-color: #585858;
 	--square-buttons-color: #7ca9f7;
@@ -46,7 +46,7 @@ body{
 }
 
 #pokedex {
-	height: 500px;
+	height: 600px;
 	width: 500px;
 	display: flex;
 	border-radius: 10px;
@@ -57,6 +57,7 @@ body{
     background-repeat: repeat;
     background-size: 52px 52px;
     background-position: center;
+	justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -70,7 +71,7 @@ body{
 	background-color: var(--main-bg-color);
 	box-sizing: border-box;
 	height: 100%;
-	width: 50%;
+	width: 70%;
 	display: flex;
 	flex-direction: column;
     justify-content: space-between;
@@ -154,13 +155,15 @@ body{
 }
 
 .screen {
-	width: 220px;
-	height: 220px;
+	width: 320px;
+	height: 320px;
 	border: solid black;
 	border-radius: 0 0 0 17%;
 	display: grid;
 	grid-template-rows: 10% 72% 18%;
 	background-color: white;
+	padding-top: 10px;
+	margin: 10px;
 }
 
 .top-screen-lights {
@@ -287,9 +290,10 @@ body{
 
 .long-buttons-container {
 	display: flex;
-	width: 100px;
+	width: 120px;
 	justify-content: space-around;
 	margin-left: 7px;
+	margin-top: 10px;
 }
 
 .nav-buttons-container {
@@ -401,7 +405,7 @@ body{
 	box-sizing: border-box;
 	position: relative;
 	height: 100%;
-	width: 50%;
+	width: 60%;
 	display: flex;
 	flex-direction: column;
     justify-content: space-around;
@@ -432,13 +436,14 @@ body{
 }
 .right-panel-screen {
 	font-family: sans-serif;
-	width: 200px;
-	height: 180px;
+	width: 280px;
+	height: 200px;
 	background-color: var(--secondary-screen-bg-color);
 	border: solid black 2px;
 	border-radius: 4px;
 	font-size: 8px;
-	padding: 10px;
+	padding: 5px;
+	margin: 2px;
 	display: flex;
     flex-direction: column;
 	align-items: flex-start;
@@ -577,7 +582,7 @@ body{
 
 /* Miscelaneos */
 
-#moviminetos{
+#movimientos{
 	display: flex;
 	flex-direction: column;
 }
