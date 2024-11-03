@@ -4,7 +4,9 @@
 <script src="../cuerpo/cuerpo.js" defer></script>
 
 <div id="contenedor" class="contenedor"></div>
-<div id="spinner" class="spinner-hidden"> </div>
+<div class="containerSpinner">
+<div id="spinner" style="display: none;" class="spinner" role="status"></div>
+</div>
 
 <form id="formulario" method="POST">
     <!-- <input type="button" id="anterior" name="anterior" class="fas fa-arrow-circle-left izquierda" onclick="cargaAnterior()">
