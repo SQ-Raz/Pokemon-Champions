@@ -2,6 +2,10 @@ var anterior = "";
 var siguiente = "";
 
 function listarRegistros(pagina) {
+	// Mostrar el spinner antes de llamar la api
+	const spinner = document.getElementById("spinner");
+        spinner.style.display = "block";
+	
 	// Funcion que se va a encargar de hacer el fetch contra PHP
 	let datos = new FormData();
 	datos.append("pagina", pagina);
@@ -30,6 +34,8 @@ function listarRegistros(pagina) {
 			while (aborrar.length > 0) {
 				aborrar[0].parentNode.removeChild(aborrar[0]);
 			}
+			// Hide spinner after processing data
+			 spinner.style.display = "none";
 			// Aqui tendrian que cargarse los datos en la pantalla
 			for (let i in response["lista"]) {
 				let fila = document.createElement("div");
