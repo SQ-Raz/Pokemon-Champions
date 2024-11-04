@@ -1,4 +1,4 @@
-<?php include_once "../encabezado/encabezado.php"?>
+
 
 <!DOCTYPE html>
 <html lang="es">
