@@ -2,6 +2,10 @@ var anterior = "";
 var siguiente = "";
 
 function listarRegistros(pagina) {
+
+	// Mostrar el spinner antes de llamar la api
+	const spinner = document.getElementById("spinner");
+        spinner.style.display = "block";
 	// Funcion que se va a encargar de hacer el fetch contra PHP
 	let datos = new FormData();
 	datos.append("pagina", pagina);
@@ -30,6 +34,8 @@ function listarRegistros(pagina) {
 			while (aborrar.length > 0) {
 				aborrar[0].parentNode.removeChild(aborrar[0]);
 			}
+			// para ocultar el spinner después de cargar o procesar datos
+			spinner.style.display = "none";
 			// Aqui tendrian que cargarse los datos en la pantalla
 			for (let i in response["lista"]) {
 				let fila = document.createElement("div");
@@ -237,7 +243,7 @@ function listarRegistros(pagina) {
 }
 
 window.onload = function () {
-	listarRegistros("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=8");
+	listarRegistros("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12");
 };
 
 function cargaFormulario() {
@@ -270,3 +276,31 @@ function cargaAnterior() {
 
 document.getElementById("anterior").addEventListener("click", cargaAnterior);
 document.getElementById("siguiente").addEventListener("click", cargaSiguiente);
+
+
+    // Obtener elementos de audio y botones
+    const audio = document.getElementById('background-music');
+    const playButton = document.getElementById('play-button');
+    const stopButton = document.getElementById('stop-button');
+
+    // Función para reproducir música
+    function playMusic() {
+        audio.play();
+        playButton.style.display = 'none'; // Ocultar botón de reproducir
+        stopButton.style.display = 'inline'; // Mostrar botón de detener
+    }
+
+    // Función para detener música
+    function stopMusic() {
+        audio.pause();
+        audio.currentTime = 0; // Reiniciar la música al inicio
+        stopButton.style.display = 'none'; // Ocultar botón de detener
+        playButton.style.display = 'inline'; // Mostrar botón de reproducir
+    }
+
+    // Añadir eventos de clic a los botones
+    playButton.addEventListener('click', playMusic);
+    stopButton.addEventListener('click', stopMusic);
+
+    // Reproducir música al hacer clic en el contenedor
+    document.getElementById('contenedor').addEventListener('click', playMusic);

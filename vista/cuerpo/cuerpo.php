@@ -7,6 +7,9 @@
 <script src="../cuerpo/cuerpo.js" defer></script>
 
 <div id="contenedor" class="contenedor"></div>
+<div class="containerSpinner">
+<div id="spinner" style="display: none;" class="spinner" role="status"></div>
+</div>
 
 <form id="formulario" method="POST">
     <i id="anterior" name="anterior" class="fas fa-arrow-circle-left izquierda"></i>
@@ -18,31 +21,3 @@
 <!-- Elemento de audio -->
 <audio id="background-music" src="../cuerpo/musica.mp3"></audio>
 
-<script>
-    // Obtener elementos de audio y botones
-    const audio = document.getElementById('background-music');
-    const playButton = document.getElementById('play-button');
-    const stopButton = document.getElementById('stop-button');
-
-    // Función para reproducir música
-    function playMusic() {
-        audio.play();
-        playButton.style.display = 'none'; // Ocultar botón de reproducir
-        stopButton.style.display = 'inline'; // Mostrar botón de detener
-    }
-
-    // Función para detener música
-    function stopMusic() {
-        audio.pause();
-        audio.currentTime = 0; // Reiniciar la música al inicio
-        stopButton.style.display = 'none'; // Ocultar botón de detener
-        playButton.style.display = 'inline'; // Mostrar botón de reproducir
-    }
-
-    // Añadir eventos de clic a los botones
-    playButton.addEventListener('click', playMusic);
-    stopButton.addEventListener('click', stopMusic);
-
-    // Reproducir música al hacer clic en el contenedor
-    document.getElementById('contenedor').addEventListener('click', playMusic);
-</script>

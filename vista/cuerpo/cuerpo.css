@@ -109,6 +109,23 @@ body{
     display: none !important;
 }
 
+.spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 0.50em solid #f3f3f3; /* Light gray */
+    border-top: 0.40em solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.containerSpinner {
+    position: relative;
+  }
+
 @media (max-width: 1140px) {
     .contenedor{
         display: grid;
@@ -133,3 +150,8 @@ body{
    
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);
+   }
+  }
